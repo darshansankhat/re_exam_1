@@ -128,8 +128,9 @@ class _Home_screenState extends State<Home_screen> {
                       ),
                       InkWell(
                           onTap: () {
-                            providerF!.changeQuestion();
+
                             providerT!.ansList.add("A");
+                            providerF!.changeQuestion();
                           },
                           child: ans("A",
                               "${q1.results![providerT!.i].incorrectAnswers![0]}")),
@@ -138,8 +139,9 @@ class _Home_screenState extends State<Home_screen> {
                       ),
                       InkWell(
                         onTap: () {
-                          providerF!.changeQuestion();
+
                           providerT!.ansList.add("B");
+                          providerF!.changeQuestion();
                         },
                         child: ans("B",
                             "${q1.results![providerT!.i].incorrectAnswers![1]}"),
@@ -149,8 +151,9 @@ class _Home_screenState extends State<Home_screen> {
                       ),
                       InkWell(
                         onTap: () {
-                          providerF!.changeQuestion();
+
                           providerT!.ansList.add("C");
+                          providerF!.changeQuestion();
                         },
                         child: ans("C",
                             "${q1.results![providerT!.i].incorrectAnswers![2]}"),
@@ -161,9 +164,10 @@ class _Home_screenState extends State<Home_screen> {
                       InkWell(
 
                           onTap: () {
+
+                            providerT!.ansList.add("D");
                             providerF!.changeQuestion();
-                            providerT!.ansList.add("${q1.results![providerT!.i].correctAnswer}");
-                          },child: ans("D", "D")),
+                          },child: ans("D", "${q1.results![providerT!.i].correctAnswer}")),
                       SizedBox(
                         height: 2.h,
                       ),
@@ -173,7 +177,9 @@ class _Home_screenState extends State<Home_screen> {
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: InkWell(
                             onTap: () {
+                              providerF!.result();
                               providerF!.restartGame(0);
+                              Navigator.pushNamed(context, "con");
                             },
                             child: Container(
                               height: 60,
@@ -182,7 +188,7 @@ class _Home_screenState extends State<Home_screen> {
                                 color: Colors.blue,
                               ),
                               alignment: Alignment.center,
-                              child: Text("Your Question is over restart game",style: TextStyle(fontSize: 18,color: Colors.white),),
+                              child: Text("Your Question is over show result",style: TextStyle(fontSize: 18,color: Colors.white),),
                             ),
                           ),
                         ),

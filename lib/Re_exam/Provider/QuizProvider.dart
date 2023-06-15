@@ -7,10 +7,24 @@ class QuizProvider extends ChangeNotifier
 
   int i=0;
   bool d=false;
+  int congrets=0;
 
   List ansList=[
 
   ];
+
+  void result()
+  {
+    for(int a=0;a<9;a++)
+      {
+        if(ansList[a]=="D")
+          {
+            congrets++;
+
+          }
+      }
+    print(congrets);
+  }
 
   Future<QuizModel> apiDataParsing()
   async {
@@ -29,7 +43,6 @@ class QuizProvider extends ChangeNotifier
         d=true;
       }
 
-    print(ansList);
     notifyListeners();
   }
 
