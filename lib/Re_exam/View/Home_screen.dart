@@ -129,23 +129,41 @@ class _Home_screenState extends State<Home_screen> {
                       InkWell(
                           onTap: () {
                             providerF!.changeQuestion();
+                            providerT!.ansList.add("A");
                           },
                           child: ans("A",
                               "${q1.results![providerT!.i].incorrectAnswers![0]}")),
                       SizedBox(
                         height: 2.h,
                       ),
-                      ans("B",
-                          "${q1.results![providerT!.i].incorrectAnswers![1]}"),
+                      InkWell(
+                        onTap: () {
+                          providerF!.changeQuestion();
+                          providerT!.ansList.add("B");
+                        },
+                        child: ans("B",
+                            "${q1.results![providerT!.i].incorrectAnswers![1]}"),
+                      ),
                       SizedBox(
                         height: 2.h,
                       ),
-                      ans("C",
-                          "${q1.results![providerT!.i].incorrectAnswers![2]}"),
+                      InkWell(
+                        onTap: () {
+                          providerF!.changeQuestion();
+                          providerT!.ansList.add("C");
+                        },
+                        child: ans("C",
+                            "${q1.results![providerT!.i].incorrectAnswers![2]}"),
+                      ),
                       SizedBox(
                         height: 2.h,
                       ),
-                      ans("D", "${q1.results![providerT!.i].correctAnswer}"),
+                      InkWell(
+
+                          onTap: () {
+                            providerF!.changeQuestion();
+                            providerT!.ansList.add("${q1.results![providerT!.i].correctAnswer}");
+                          },child: ans("D", "D")),
                       SizedBox(
                         height: 2.h,
                       ),
@@ -168,7 +186,7 @@ class _Home_screenState extends State<Home_screen> {
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   );
                 }

@@ -8,10 +8,15 @@ class QuizProvider extends ChangeNotifier
   int i=0;
   bool d=false;
 
+  List ansList=[
+
+  ];
+
   Future<QuizModel> apiDataParsing()
   async {
     return await QuizApi.quizApi.apiData();
   }
+
 
   void changeQuestion()
   {
@@ -22,9 +27,9 @@ class QuizProvider extends ChangeNotifier
     else
       {
         d=true;
-
       }
 
+    print(ansList);
     notifyListeners();
   }
 
@@ -32,6 +37,7 @@ class QuizProvider extends ChangeNotifier
   {
     i=value;
     d=false;
+    ansList.clear();
 
     notifyListeners();
   }

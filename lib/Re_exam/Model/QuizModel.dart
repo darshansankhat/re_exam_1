@@ -83,3 +83,10 @@ class EnumValues<T> {
     return reverseMap;
   }
 }
+
+class RandomModel
+{
+  String? a,b,c,d;
+
+  RandomModel({this.a, this.b, this.c, this.d});
+}
